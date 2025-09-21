@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Abilify.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:pages="clr-namespace:Abilify.Pages"
+    xmlns:microapps="clr-namespace:Abilify.MicroApps"
+    xmlns:shell="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Abilify">
+    
+
+    <!-- Flyout items -->
+    <ShellContent
+        Title="Dashboard"
+        Icon="{StaticResource IconDashboard}"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="main" />
+
+    <ShellContent
+        Title="Configure Tags"
+        Icon="{StaticResource IconConfigureTags}"
+        ContentTemplate="{DataTemplate pages:ConfigureTagsPage}"
+        Route="configtags" />
+
+    <!-- Read-It Page -->
+    <ShellContent
+        Title="Read-It"
+        Icon="{StaticResource IconReadIt}"
+        ContentTemplate="{DataTemplate microapps:ReadItPage}"
+        Route="readit" />
+
+    <ShellContent
+        Title="FocusTimer"
+        Icon="{StaticResource IconFocusTimer}"
+        ContentTemplate="{DataTemplate microapps:FocusTimerPage}"
+        Route="focustimer" />
+
+    <ShellContent
+        Title="ColourBlind"
+        Icon="{StaticResource IconColorBlind}"
+        ContentTemplate="{DataTemplate microapps:ColourBlindPage}"
+        Route="colourblind" />
+
+    <ShellContent
+        Title="SimplifyText"
+        Icon="{StaticResource IconSimplifyText}"
+        ContentTemplate="{DataTemplate microapps:SimplifyTextPage}"
+        Route="simplify" />
+
+    <ShellContent
+        Title="Assistance"
+        Icon="{StaticResource IconAssistance}"
+        ContentTemplate="{DataTemplate microapps:AssistantToolPage}"
+        Route="assistance" />
+
+    <!-- Footer with theme toggle + tool toggle -->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="15" Spacing="10">
+            <!-- Theme toggle -->
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl"
+                VerticalOptions="Center" HorizontalOptions="Center"
+                SegmentWidth="40" SegmentHeight="40"
+                SelectionChanged="SfSegmentedControl_SelectionChanged">
+                <sf:SfSegmentedControl.ItemsSource>
+                    <x:Array Type="{x:Type sf:SfSegmentItem}">
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}" />
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}" />
+                    </x:Array>
+                </sf:SfSegmentedControl.ItemsSource>
+            </sf:SfSegmentedControl>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

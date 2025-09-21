@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Abilify.MicroApps.AssistantToolPage">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" Spacing="30">
+        <!-- Title Label -->
+        <Label Text="Send a fast message to the caretaker"
+               FontSize="30"
+               HorizontalOptions="Center" />
+
+        <!-- Entry for caretaker's phone number -->
+        <Entry x:Name="PhoneNumberEntry"
+               Placeholder="Enter caretaker's phone number"
+               Keyboard="Telephone"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- RadioButtons for predefined messages -->
+        <RadioButton GroupName="MessageGroup" Content="Come help me"
+                     Value="HelpMessage" x:Name="HelpRadioButton" CheckedChanged="OnRadioButtonCheckedChanged"/>
+        <RadioButton GroupName="MessageGroup" Content="I need..."
+                     Value="CustomMessage" x:Name="CustomMessageRadioButton" CheckedChanged="OnRadioButtonCheckedChanged"/>
+
+        <!-- TextBox for custom message when "I need..." is selected -->
+        <Entry x:Name="CustomMessageEntry" Placeholder="Type your message here"
+                IsVisible="False" HorizontalOptions="FillAndExpand" />
+
+
+        <RadioButton GroupName="MessageGroup" Content="I want to..."
+                     Value="WantMessage" x:Name="WantMessageRadioButton" CheckedChanged="OnRadioButtonCheckedChanged"/>
+
+        <!-- TextBox for custom message when "I want to..." is selected -->
+        <Entry x:Name="WantMessageEntry" Placeholder="Type your message here"
+               IsVisible="False" HorizontalOptions="FillAndExpand" />
+
+        <!-- Button to send a message with the current location on WhatsApp -->
+        <Button Text="Send Current Location"
+                Clicked="OnSendWhatsAppMessageClicked"
+                BackgroundColor="#25D366"
+                TextColor="White" />
+    </StackLayout>
+</ContentPage>

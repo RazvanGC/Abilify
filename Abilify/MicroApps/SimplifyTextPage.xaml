@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Abilify.MicroApps.SimplifyTextPage">
+
+    <StackLayout Padding="20" Spacing="15">
+
+        <Editor x:Name="InputEditor" Placeholder="Type your text here..." HeightRequest="150"/>
+
+        <Button Text="Simplify Text" Clicked="OnSimplifyClicked"/>
+
+        <ActivityIndicator x:Name="LoadingIndicator"
+                           IsVisible="False"
+                           IsRunning="False"
+                           Color="Blue"/>
+
+        <Label x:Name="OutputLabel"
+               Text=""
+               FontSize="Medium"
+               TextColor="Blue"/>
+
+    </StackLayout>
+</ContentPage>

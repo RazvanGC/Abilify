@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Abilify.MicroApps.FocusTimerPage">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" Spacing="40">
+
+        <Label x:Name="StatusMessageLabel"
+               Text="Focus Time"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" 
+               TextColor="White" />
+
+        <Frame x:Name="TimerFrame"
+               CornerRadius="150"
+               BorderColor="#FFEA00"
+               BackgroundColor="#17171a"
+               Padding="20"
+               WidthRequest="150"
+               HeightRequest="150"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               HasShadow="True">
+
+            <Label x:Name="TimerLabel"
+                   Text="25:00"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+        </Frame>
+
+        <Button x:Name="StartButton"
+                Text="Start"
+                Clicked="OnStartPomodoroClicked" 
+                TextColor="White"
+                Margin="0,20,0,0" />
+
+        <Button Text="Stop"
+                Clicked="OnStopPomodoroClicked"
+                TextColor="White" />
+
+    </StackLayout>
+</ContentPage>

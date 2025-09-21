@@ -25,4 +25,3 @@ For platform-specific instructions, refer to the respective platform guides.
 1. Configure Tags: Select and customize tags that suit your needs (e.g., ADHD, Anxiety) from the "Configure Tags" page.
 2. Tools: Access different tools like Read-It, Focus Timer, and more based on your selected tags.
 3. Assistance: Communicate with caretakers via the app, ensuring you get the necessary support when needed.
-# Abilify
